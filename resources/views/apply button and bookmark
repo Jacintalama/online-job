@@ -1,0 +1,13 @@
+  {{-- <!-- Apply and Bookmark buttons below job title -->
+
+                        <a href="{{ route('jobs.details', $job->id) }}" class="btn btn-primary mt-3 mr-3">Apply Now</a>
+
+                        <a href="{{ route('jobs.bookmark', $job->id) }}">
+                        @if(Auth::check() && Auth::user()->bookmarkedJobs->contains($job))
+                            <!-- Display as bookmarked -->
+                            <i class="bi bi-bookmark-fill"></i> Bookmarked
+                        @else
+                            <!-- Display as not bookmarked -->
+                            <i class="bi bi-bookmark"></i> Bookmark
+                        @endif
+                        </a> --}}

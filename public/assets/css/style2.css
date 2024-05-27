@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 600px; /* Increased width */
+    padding: 40px; /* Increased padding */
+    border-radius: 10px;
+    background: linear-gradient(135deg, #83a4d4, #b6fbff);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px; /* Increased margin */
+}
+
+.step {
+    width: 30%;
+    padding: 15px; /* Increased padding */
+    text-align: center;
+    background: #f1f1f1;
+    border-radius: 5px;
+    cursor: not-allowed;
+    font-size: 1.1em; /* Increased font size */
+    margin: 0 10px;
+}
+
+.step.active {
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.tab {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tab.show {
+    display: block;
+    opacity: 1;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px; /* Increased padding */
+    margin: 15px 0; /* Increased margin */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.1em; /* Increased font size */
+}
+
+button {
+    padding: 15px 25px; /* Increased padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px; /* Increased margin */
+    transition: background-color 0.3s ease;
+    font-size: 1.1em; /* Increased font size */
+}
+
+button:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.next-btn, .submit-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.next-btn:hover, .submit-btn:hover {
+    background: #45a049;
+}
+
+.prev-btn {
+    background: #f1f1f1;
+}
+
+.prev-btn:hover {
+    background: #e0e0e0;
+}
+
+.title {
+    font-family: 'Arial', sans-serif;
+    font-size: 2em; /* Large font size for the title */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px; /* Space between the title and the container */
+}
+
+input.invalid {
+    border-color: red;
+    background-color: #ffdddd;
+}

@@ -1,0 +1,31 @@
+<div class="mb-3">
+    @csrf
+    <form action="/searchJobs" method="get">
+        <div class="row">
+            <div class="col-lg-12 mx-auto text-center">
+                <div class="search-bar-container">
+                    <div class="input-group mb-3">
+                        <!-- Label for Department -->
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">From</span>
+                        </div>
+                        <input type="text" class="form-control mr-5" name="department" placeholder="Search by department...">
+                        <!-- Spacer using Bootstrap -->
+                        <div class="input-group-prepend ml-3">
+                            <span class="input-group-text" style="visibility: hidden;">Hidden Text</span>
+                        </div>
+                        <!-- Label for Job Title/Keyword -->
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">What</span>
+                        </div>
+                        <input type="text" class="form-control mr-3" name="title" placeholder="Search by job title or keyword...">
+                        <!-- Search Button -->
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary" style="height: 100%;">Find Jobs</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

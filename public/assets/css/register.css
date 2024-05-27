@@ -1,0 +1,126 @@
+/* Custom styles */
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0;
+    font-size: 1.5em;
+    background-color: #0056b3;
+}
+
+.btn-primary {
+
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+}
+.btn-primary:hover {
+
+    background-color: #0056b3;
+}
+
+
+
+
+.card.rgb-light-line {
+    position: relative;
+    overflow: hidden;
+}
+
+.card.rgb-light-line::before,
+.card.rgb-light-line::after,
+.card.rgb-light-line > .card-header::before,
+.card.rgb-light-line > .card-header::after,
+.card.rgb-light-line > .card-body::before,
+.card.rgb-light-line > .card-body::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, red, yellow, green, blue);
+    animation: slideAnimation 10s linear infinite;
+}
+
+/* Top border */
+.card.rgb-light-line::before {
+    top: 0;
+    left: -100%;
+    right: 100%;
+    height: 2px;
+}
+
+/* Bottom border */
+.card.rgb-light-line::after {
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    height: 2px;
+    animation-direction: reverse;
+}
+
+/* Left border */
+.card.rgb-light-line > .card-header::before {
+    top: -100%;
+    bottom: 100%;
+    left: 0;
+    width: 2px;
+    background: linear-gradient(180deg, red, yellow, green, blue);
+}
+
+/* Right border */
+.card.rgb-light-line > .card-header::after {
+    top: 100%;
+    bottom: -100%;
+    right: 0;
+    width: 2px;
+    background: linear-gradient(180deg, red, yellow, green, blue);
+    animation-direction: reverse;
+}
+
+@keyframes slideAnimation {
+    0%, 100% {
+        transform: translate(0);
+    }
+    50% {
+        transform: translate(100%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.role-option {
+    cursor: pointer;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s;
+}
+
+.role-option:hover {
+    background-color: #f1f1f1;
+    border-color: #007bff;
+
+}
+
+.role-option input[type="radio"] {
+    display: none;
+}
+
+
+.role-option input[type="radio"]:checked + label {
+    color: #007bff;
+}
+

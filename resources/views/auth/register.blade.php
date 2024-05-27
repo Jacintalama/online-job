@@ -8,9 +8,24 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
+            {{-- ROLE --}}
+            {{-- <div class="mt-4">
+                <label class="block font-medium text-sm text-gray-700">
+                    Register as:
+                </label>
+                <div class="role-selection">
+
+                    <div class="role" data-role="applicant">
+                        <i class="fas fa-user"></i>
+                        <p>Applicant</p>
+                    </div>
+                </div>
+                <input type="hidden" name="role" id="role" required>
+                <p id="roleError" class="text-red-600 mt-2 hidden">Please select a role.</p>
+            </div> --}}
 
             <div>
-                <x-label for="name" value="{{ __('Name') }}" />
+                <x-label for="name" value="{{ __('UserName') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 

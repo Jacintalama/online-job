@@ -5,3 +5,381 @@
 [x-cloak] {
     display: none;
 }
+
+
+
+.card23 {
+    background-color: white; /* Adjusted color of card to white */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+}
+.animate-message {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: popup 0.5s forwards;
+}
+
+@keyframes popup {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-row {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+h1.count {
+    font-size: 48px;  /* Adjust size as needed */
+}
+/* //Progress bar */
+.progress-bar {
+    width: 100%;
+    background-color: #f3f3f3;
+    margin-bottom: 20px;
+    overflow: hidden;  /* Hide any overflowing content */
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #ccc;
+}
+
+.progress {
+    width: 0;
+    height: 20px;
+    background: repeating-linear-gradient(
+      -45deg,
+      #4CAF50,
+      #4CAF50 10px,
+      #48A447 10px,
+      #48A447 20px
+    );  /* Striped pattern using gradient */
+    transition: width 1s linear;
+    animation: progress-stripes 1s linear infinite;   /* Animate stripes */
+}
+
+@keyframes progress-stripes {
+    from { background-position: 0 0; }
+    to { background-position: 40px 0; }  /* Adjust as per stripe size */
+}
+
+/* //BTN CREATE JOB */
+.btn {
+    background-color: #076e3e; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 20px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 4px; /* Rounded corners */
+    text-align: center; /* Centered text */
+    transition-duration: 0.4s; /* 0.4 second transition effect to hover styles */
+}
+
+/* On mouse-over (hover) */
+.btn:hover {
+    background-color: #2aec85; /* Darker green */
+}
+
+
+/* //CARD BOX DESIGN */
+.card {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0; /* Initially transparent */
+    transform: scale(0.95); /* Slightly scaled down */
+    transition: opacity 0.5s, transform 0.5s; /* Transitions for opacity and transform */
+}
+/* State after the page loads or after adding the active class */
+body.loaded .card,
+.card.active {
+    opacity: 1; /* Fully visible */
+    transform: scale(1); /* Natural size */
+}
+
+.card-header {
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 10px 15px; /* Some padding */
+    font-weight: bold; /* Bold font */
+    border-bottom: 1px solid #e0e0e0; /* Bottom border */
+}
+
+.card-body {
+    padding: 15px; /* Some padding */
+}
+
+
+.form-step {
+    display: none;  /* Hide all steps by default */
+}
+
+
+.wide-input {
+    width: 100%; /* adjust this as needed */
+}
+
+
+
+
+
+
+
+
+
+
+
+  /* Custom styles for the form */
+.search-bar-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.input-group-prepend span {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.input-group-prepend .ml-3 span {
+    background-color: transparent;
+    visibility: hidden;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.btn-primary {
+    border-radius: 0;
+}
+
+
+
+
+
+.list-group-item-action.active {
+    background-color: #e9ecef; /* Light gray background */
+    color: #333;               /* Darker text color */
+    border: 2px solid #007bff; /* Blue border for emphasis */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Slight shadow for elevation */
+}
+
+
+/*
+BOX FOR DASHBOARD */
+
+.box-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box1, .box2, .box3 {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.box1 {
+    background-color: #E57373; /* Light Red */
+}
+
+.box1:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.box2 {
+    background-color: #81C784; /* Light Green */
+}
+
+.box2:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.box3 {
+    background-color: #64B5F6; /* Light Blue */
+}
+
+.box3:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+
+/* FOR SIDE BAR */
+.list-group-item {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f0f0f0;
+    transform: translateX(10px);
+}
+
+.list-group-item:hover a {
+    color: #007bff;
+}
+
+.list-group-item.active {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.list-group-item.active a {
+    color: #fff;
+}
+
+.list-group-item:hover {
+    background-color: your_desired_color;
+}
+
+.list-group-item:hover a {
+    color: another_desired_color;
+}
+
+.stylish-font {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* LOGIN SELECTOR */
+.role-selection {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.role {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+
+.role i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.role.active {
+    border: 2px solid #4CAF50;
+}
+
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa; /* Or any color of your choice */
+}
+.btn-reject {
+    background-color: rgb(179, 22, 22) !important;
+
+}
+
+.btn-unpublish {
+    background-color: #eb7819; /* Yellow */
+
+}
+
+.btn-unpublish:hover, .btn-unpublish:focus, .btn-unpublish:active {
+    background-color: #eb7819; /* Darker Yellow */
+
+}
+
+
+
+
+
+.alert-box {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+    animation: slideIn 0.5s forwards;
+    margin-top: 10px;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert {
+    border-radius: 5px;
+    padding: 15px;
+
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert strong {
+    margin-right: 5px;
+}
+
+
+.delete-form {
+    display: none;
+}
+
+.message-row:hover .delete-form {
+    display: block;
+}
+
+
+#scrollTopIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 5px;  /* Change this to get the desired distance from the scrollbar */
+    z-index: 99;
+    background-color: rgba(85, 85, 85, 0.6);
+    padding: 10px;
+    border-radius: 50%;
+    transform: scaleY(-1);
+    transition: opacity 0.3s;
+}
+
+
+/* DASHBOARD */
+.sidebar-link {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.sidebar-link:hover {
+    color: #007bff;
+}
+
+.active-bg {
+    background-color: #f7f7f7;
+}

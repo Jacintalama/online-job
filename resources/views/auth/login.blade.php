@@ -1,5 +1,6 @@
 <x-guest-layout>
     <x-authentication-card>
+
         <x-slot name="logo">
             <x-authentication-card-logo />
         </x-slot>
@@ -14,6 +15,31 @@
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
+{{-- ROLE SELECTOR --}}
+<div class="mt-4">
+    <label class="block font-medium text-sm text-gray-700">
+        Login as:
+    </label>
+    <div class="role-selection">
+        <div class="role" data-role="department_head">
+            <i class="fas fa-briefcase "></i>
+            <p>DP HEAD</p>
+        </div>
+        <div class="role" data-role="applicant">
+            <i class="fas fa-user"></i>
+            <p>Applicant</p>
+        </div>
+    </div>
+    <input type="hidden" name="role" id="role" required>
+    <p id="roleError" class="text-red-600 mt-2 hidden">Please select a role.</p>
+</div>
+<!-- Error Modal -->
+<div id="errorModal" class="error-modal hidden">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <p>Please select a role before logging in.</p>
+    </div>
+</div>
 
             <div>
                 <x-label for="email" value="{{ __('Email') }}" />
@@ -31,6 +57,9 @@
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
+            <div class="center-content mt-4 text-center">
+                Don't have an account yet? <a href="{{ route('register') }}"><strong>Click here</strong></a> to register.
+            </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
@@ -39,10 +68,14 @@
                     </a>
                 @endif
 
+
                 <x-button class="ml-4">
                     {{ __('Log in') }}
                 </x-button>
             </div>
         </form>
+
+
+
     </x-authentication-card>
 </x-guest-layout>

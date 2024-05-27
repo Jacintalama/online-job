@@ -7,7 +7,8 @@
     </x-section-title>
 
     <div class="mt-5 md:mt-0 md:col-span-2">
-        <form wire:submit="{{ $submit }}">
+        <form wire:submit="{{ $submit }}" enctype="multipart/form-data">
+
             <div class="px-4 py-5 bg-white sm:p-6 shadow {{ isset($actions) ? 'sm:rounded-tl-md sm:rounded-tr-md' : 'sm:rounded-md' }}">
                 <div class="grid grid-cols-6 gap-6">
                     {{ $form }}
@@ -19,6 +20,22 @@
                     {{ $actions }}
                 </div>
             @endif
+            <script>
+                function computeAge() {
+                    const dob = new Date(document.getElementById('dob').value);
+                    const today = new Date();
+                    let age = today.getFullYear() - dob.getFullYear();
+                    const monthDiff = today.getMonth() - dob.getMonth();
+
+                    // Adjust the age if the birth date hasn't occurred this year yet
+                    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                        age--;
+                    }
+
+                }
+            </script>
         </form>
     </div>
+
 </div>
+
